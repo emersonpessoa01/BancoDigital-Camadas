@@ -11,6 +11,10 @@ public class Cliente {
         this.id = id;
     }
 
+    public Cliente() {
+        //TODO Auto-generated constructor stub
+    }
+
     public String getNome() {
         return nome;
     }

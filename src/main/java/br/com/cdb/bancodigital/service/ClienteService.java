@@ -5,7 +5,7 @@ import br.com.cdb.bancodigital.entity.Cliente;
 
 //Adicionar regras de negócio, como validações, antes de salvar ou buscar clientes.
 public class ClienteService {
-    ClienteDAO clienteDAO;
+    ClienteDAO clienteDAO = new ClienteDAO();
 
     public boolean addCliente(String nome, String cpf) {
         if (!validarCPF(cpf)) {
@@ -19,7 +19,7 @@ public class ClienteService {
         cliente.setCpf(cpf);
 
         clienteDAO.addCliente(cliente);
-        return false;
+        return true;
     }
 
     private boolean validarCPF(String cpf) {

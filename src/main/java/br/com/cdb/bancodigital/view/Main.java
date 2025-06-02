@@ -10,11 +10,11 @@ public class Main {
 
         ClienteService clienteService = new ClienteService();
 
-        if(clienteService.addCliente(nome, cpf)) {
-            System.out.println("Cliente adicionado com sucesso!");
+        if (clienteService.addCliente(nome, cpf)) {
+            System.out.println("Cliente adicionado com sucesso!\n" + "cpf: " + cpf + "\nnome: " + nome);
         } else {
             System.out.println("Erro ao adicionar cliente. Verifique os dados informados.");
         }
     }
-    
+
 }

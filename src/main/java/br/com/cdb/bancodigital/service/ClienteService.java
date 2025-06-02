@@ -7,12 +7,21 @@ import br.com.cdb.bancodigital.entity.Cliente;
 public class ClienteService {
     ClienteDAO clienteDAO = new ClienteDAO();
 
+    // Método para adicionar um cliente com validações
+    /**
+     * Adiciona um cliente ao sistema após validar os dados.
+     *
+     * @param nome Nome do cliente.
+     * @param cpf  CPF do cliente.
+     * @return true se o cliente foi adicionado com sucesso, false caso contrário.
+     */
+    // É um construtor que recebe o nome e o cpf do cliente, valida os dados e adiciona o cliente ao banco de dados.
     public boolean addCliente(String nome, String cpf) {
-        if (!validarCPF(cpf)) {
-            return false; // CPF inválido
-        }
         if (!validarNome(nome)) {
             return false; // Nome inválido
+        }
+        if (!validarCPF(cpf)) {
+            return false; // CPF inválido
         }
         Cliente cliente = new Cliente();
         cliente.setNome(nome);

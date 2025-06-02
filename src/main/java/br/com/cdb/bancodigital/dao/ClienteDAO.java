@@ -18,7 +18,7 @@ public class ClienteDAO {
     }
 
     // Exemplo de método para buscar um cliente por ID
-    public Cliente buscarCliente(String id) {
+    public Cliente buscarClientePorId(String id) {
         // Lógica para buscar o cliente no banco de dados
         // Retorne o cliente encontrado ou null se não existir
         for (Cliente cliente : listaDeClientes) {

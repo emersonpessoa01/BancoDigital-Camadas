@@ -7,8 +7,9 @@ public class Cliente {
 
     public Cliente(String nome, String cpf, String id) {
         this.nome = nome;
-        this.cpf = cpf;
-        this.id = id;
+//        this.cpf = cpf;
+//
+        // id será atribuído no DAO
     }
 
     public Cliente() {

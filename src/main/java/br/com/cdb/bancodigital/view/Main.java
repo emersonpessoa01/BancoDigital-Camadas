@@ -8,10 +8,12 @@ public class Main {
         String nome = "João da Silva";
         String cpf = "12345678901"; // Exemplo de CPF válido
 
+
         ClienteService clienteService = new ClienteService();
 
-        if (clienteService.addCliente(nome, cpf)) {
-            System.out.println("Cliente adicionado com sucesso!\n" + "cpf: " + cpf + "\nnome: " + nome);
+        String id = "";
+        if (clienteService.addCliente(nome, cpf, id)) {
+            System.out.println("Cliente adicionado com sucesso!\n" + "id" + id + "cpf: " + cpf + "\nnome: " + nome);
         } else {
             System.out.println("Erro ao adicionar cliente. Verifique os dados informados.");
         }

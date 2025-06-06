@@ -24,8 +24,8 @@ public class ClienteService {
             return false; // CPF inválido
         }
         Cliente cliente = new Cliente();
-        cliente.setNome(nome);
-        cliente.setCpf(cpf);
+//        cliente.setNome(nome);
+//        cliente.setCpf(cpf);
 
         clienteDAO.addCliente(cliente);
         return true;

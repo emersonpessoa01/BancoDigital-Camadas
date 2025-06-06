@@ -16,20 +16,16 @@ public class ClienteService {
      * @return true se o cliente foi adicionado com sucesso, false caso contrário.
      */
     // É um construtor que recebe o nome e o cpf do cliente, valida os dados e adiciona o cliente ao banco de dados.
-    public boolean addCliente(String nome, String cpf) {
-        if (!validarNome(nome)) {
-            return false; // Nome inválido
+    public Cliente addCliente(String nome, String cpf) {
+        if (!validarNome(nome) || !validarCPF(cpf)) {
+            return null;
         }
-        if (!validarCPF(cpf)) {
-            return false; // CPF inválido
-        }
-        Cliente cliente = new Cliente();
-//        cliente.setNome(nome);
-//        cliente.setCpf(cpf);
 
-        clienteDAO.addCliente(cliente);
-        return true;
+        Cliente cliente = new Cliente(nome, cpf);
+        clienteDAO.addCliente(cliente); // Gera o ID internamente
+        return cliente;
     }
+
 
     private boolean validarCPF(String cpf) {
         return cpf != null && cpf.matches("\\d{11}"); // Exemplo de validação simples

@@ -12,7 +12,7 @@ public class Cliente {
         // id será atribuído no DAO
     }
 
-    public Cliente() {
+    public Cliente(String nome, String cpf) {
     }
 
     public String getNome() {

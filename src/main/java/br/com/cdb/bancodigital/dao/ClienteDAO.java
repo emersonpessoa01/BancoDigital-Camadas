@@ -3,6 +3,7 @@ package br.com.cdb.bancodigital.dao;
 import br.com.cdb.bancodigital.entity.Cliente;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class ClienteDAO {
 
@@ -12,8 +13,11 @@ public class ClienteDAO {
 
     // Exemplo de método para salvar um cliente
     public void addCliente(Cliente cliente) {
+        // Geração de UD automático comUUID (mais robusto e único)
+        String novoId = UUID.randomUUID().toString();
         // Lógica para salvar o cliente no banco de dados
-        cliente.setId((listaDeClientes.size() + 1) + ""); // Simulando um ID único
+//        cliente.setId((listaDeClientes.size() + 1) + ""); // Simulando um ID único
+        cliente.setId(novoId); // Atribuindo o ID gerado ao cliente
         listaDeClientes.add(cliente);
     }
 
